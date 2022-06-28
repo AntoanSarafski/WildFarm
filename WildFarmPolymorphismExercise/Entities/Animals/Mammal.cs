@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WildFarmPolymorphismExercise.Entities.Animals
+﻿namespace WildFarmPolymorphismExercise.Entities.Animals
 {
     public abstract class Mammal : Animal
     {

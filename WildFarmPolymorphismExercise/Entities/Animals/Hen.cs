@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WildFarmPolymorphismExercise.Entities.Animals
+﻿namespace WildFarmPolymorphismExercise.Entities.Animals
 {
     public class Hen : Bird
     {
@@ -13,5 +9,12 @@ namespace WildFarmPolymorphismExercise.Entities.Animals
 
         public override string ProduceSound()
             => "Cluck";
+
+        public override void Eat(IFood food)
+        {
+            // => eat
+        }
+
+
     }
 }

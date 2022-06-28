@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WildFarmPolymorphismExercise.Entities.Animals
+﻿namespace WildFarmPolymorphismExercise.Entities.Animals
 {
     public class Tiger : Feline
     {
@@ -11,7 +7,12 @@ namespace WildFarmPolymorphismExercise.Entities.Animals
         {
         }
 
+
         public override string ProduceSound()
             => "ROAR!!!";
+        public override void Eat(IFood food)
+        {
+            // => eat;
+        }
     }
 }

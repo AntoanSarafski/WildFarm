@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WildFarmPolymorphismExercise
+﻿namespace WildFarmPolymorphismExercise
 {
     public abstract class Animal : IAnimal
     {
@@ -19,5 +15,7 @@ namespace WildFarmPolymorphismExercise
         public int FoodEaten { get; set; }
 
         public abstract string ProduceSound();
+
+        public abstract void Eat(IFood food);
     }
 }

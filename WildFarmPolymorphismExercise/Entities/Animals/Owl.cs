@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WildFarmPolymorphismExercise.Entities.Animals
+﻿namespace WildFarmPolymorphismExercise.Entities.Animals
 {
     public class Owl : Bird
     {
@@ -13,5 +9,10 @@ namespace WildFarmPolymorphismExercise.Entities.Animals
 
         public override string ProduceSound()
             => "Hoot Hoot";
+
+        public override void Eat(IFood food)
+        {
+            // => eat;
+        }
     }
 }

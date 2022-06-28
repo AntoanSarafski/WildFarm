@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using WildFarmPolymorphismExercise.Entities.Foods;
 
 namespace WildFarmPolymorphismExercise.Entities.Animals
 {
@@ -11,7 +9,15 @@ namespace WildFarmPolymorphismExercise.Entities.Animals
         {
         }
 
+
         public override string ProduceSound()
             => "Meow";
+        public override void Eat(IFood food)
+        {
+            if (food is Vegetable || food is Meat)
+            {
+                // eat
+            }
+        }
     }
 }

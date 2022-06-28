@@ -6,7 +6,7 @@ namespace WildFarmPolymorphismExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Let's start WildFarm!");
+            
         }
     }
 }

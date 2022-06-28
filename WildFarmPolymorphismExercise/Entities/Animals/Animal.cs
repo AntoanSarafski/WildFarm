@@ -8,14 +8,21 @@
             this.Weight = weight;
         }
 
-        public string Name { get; set ; }
+        public string Name { get;  }
 
-        public double Weight { get; set; }
+        public double Weight { get; protected set; }
 
-        public int FoodEaten { get; set; }
+        public int FoodEaten { get; protected set; }
 
         public abstract string ProduceSound();
 
         public abstract void Eat(IFood food);
+
+        protected void BaseEat(double modifier, int quantity)
+        {
+            this.Weight += quantity * modifier;
+            this.FoodEaten += quantity;
+        }
+        
     }
 }

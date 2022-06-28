@@ -2,11 +2,11 @@
 {
     public interface IAnimal
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public double Weight { get; set; }
+        public double Weight { get; }
 
-        public int FoodEaten { get; set; }
+        public int FoodEaten { get; }
 
         public string ProduceSound();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using WildFarmPolymorphismExercise.Entities.Exceptions;
 using WildFarmPolymorphismExercise.Entities.Foods;
 
 namespace WildFarmPolymorphismExercise.Entities.Animals
@@ -19,13 +20,12 @@ namespace WildFarmPolymorphismExercise.Entities.Animals
         {
             if (food is Vegetable || food is Fruit)
             {
-                this.Weight += food.Quantity * Modifier;
-                this.FoodEaten += food.Quantity;
+                BaseEat(Modifier, food.Quantity);
             }
             else
             {
-                throw new ArgumentException(
-                    $"{this.GetType().Name} does not eat {food.GetType().Name}!");
+                InvalidOperations.ThrowExceptionForInvalidFood(
+                    this.GetType().Name, food.GetType().Name);
 
             }
         }

@@ -14,8 +14,7 @@
 
         public override void Eat(IFood food)
         {
-            this.Weight += food.Quantity * Modifier;
-            this.FoodEaten += food.Quantity;
+            BaseEat(Modifier, food.Quantity);
         }
 
     }

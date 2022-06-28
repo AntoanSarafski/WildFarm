@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using WildFarmPolymorphismExercise.Entities.Animals;
 using WildFarmPolymorphismExercise.Entities.Foods;
+using WildFarmPolymorphismExercise.Factories;
 
 namespace WildFarmPolymorphismExercise
 {
@@ -9,7 +10,7 @@ namespace WildFarmPolymorphismExercise
     {
         static void Main(string[] args)
         {
-            //Problem with OWL !!!
+            //Problem with OWL WINGSIZE !!!
 
             string input = Console.ReadLine();
 
@@ -29,79 +30,11 @@ namespace WildFarmPolymorphismExercise
                     string[] foodInfo = Console.ReadLine()
                         .Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-                    string animalType = animalInfo[0];
-                    string name = animalInfo[1];
-                    double weight = double.Parse(animalInfo[2]);
-
-                    IAnimal animal = null;
-                    if (animalType == "Cat" || animalType == "Tiger")
-                    {
-                        string livingRegion = animalInfo[3];
-                        string breed = animalInfo[4];
-
-                        if (animalType == "Cat")
-                        {
-                            animal = new Cat(name, weight, livingRegion, breed);
-                        }
-                        else
-                        {
-                            animal = new Tiger(name, weight, livingRegion, breed);
-                        }
-                    }
-
-                    else if (animalType == "Owl" || animalType == "Hen")
-                    {
-                        double wingSize = double.Parse(animalInfo[3]);
-
-                        if (animalType == "Owl")
-                        {
-                            animal = new Owl(name, weight, wingSize);
-                        }
-                        else
-                        {
-                            animal = new Hen(name, weight, wingSize);
-                        }
-                    }
-
-                    else if (animalType == "Mouse" || animalType == "Dog")
-                    {
-                        string livingRegion = animalInfo[3];
-
-                        if (animalType == "Mouse")
-                        {
-                            animal = new Mouse(name, weight, livingRegion);
-                        }
-                        else
-                        {
-                            animal = new Dog(name, weight, livingRegion);
-                        }
-                    }
-
-
+                    IAnimal animal = AnimalFactory.CreateAnimal(animalInfo);
+                    IFood food = FoodFactory.CreateFood(foodInfo);
+                    
                     Console.WriteLine(animal.ProduceSound());
                     animals.Add(animal);
-
-                    string foodType = foodInfo[0];
-                    int quantity = int.Parse(foodInfo[1]);
-
-                    IFood food = null;
-
-                    if (foodType == "Vegetable")
-                    {
-                        food = new Vegetable(quantity);
-                    }
-                    else if (foodType == "Fruit")
-                    {
-                        food = new Fruit(quantity);
-                    }
-                    else if (foodType == "Meat")
-                    {
-                        food = new Meat(quantity);
-                    }
-                    else
-                    {
-                        food = new Seeds(quantity);
-                    }
                     animal.Eat(food);
                 }
                 catch (Exception ex)

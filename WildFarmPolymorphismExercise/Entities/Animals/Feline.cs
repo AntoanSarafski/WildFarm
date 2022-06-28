@@ -9,5 +9,8 @@
         }
 
         public string Breed { get; set; }
+
+        public override string ToString()
+             => $"{this.GetType().Name} [{Name}, {Breed}, {Weight}, {LivingRegion}, {FoodEaten}]";
     }
 }

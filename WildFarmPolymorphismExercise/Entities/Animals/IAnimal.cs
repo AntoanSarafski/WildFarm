@@ -10,6 +10,6 @@
 
         public string ProduceSound();
 
-
+        void Eat(IFood food);
     }
 }

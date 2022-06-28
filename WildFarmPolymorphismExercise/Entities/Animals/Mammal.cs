@@ -9,5 +9,8 @@
         }
 
         public string LivingRegion { get; set; }
+
+        public override string ToString()
+            => $"{this.GetType().Name} [{Name}, {Weight}, {LivingRegion}, {FoodEaten}]";
     }
 }
